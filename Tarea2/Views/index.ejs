@@ -1,0 +1,52 @@
+<%-include("template/rotulo.ejs")%>
+<body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<script src="/.js/bootstrap.min.js"></script>
+<ul>
+         
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid" style="text-align: center">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-plus"> Agregar Producto</i>
+      </button>
+    </div>  
+  </nav>
+
+    <div class="collapse" id="navbarToggleExternalContent">
+            <form action="/" method="post">
+        <div class="data-bs-toggle p-4">
+          <input class="form-control me-2" placeholder="Descripción" aria-label="Agregar Descripción" id="desc" name="des">
+          <input class="form-control me-2" placeholder="Imagen" aria-label="Agregar Imagen" type="text" id="imag1" name="imag2">
+          <button class="btn-success" type="submit">Agregar</button>
+          </div>
+    </form>
+      </div>
+      <br>
+      <br>
+      <div class="container-fluid" style="text-align: center">
+
+           <% for(var i=0; i<des.length; i++) {%>
+            <button class="navbar-toggler; btn btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleVer<%= i %>" aria-controls="navbarToggleVer<%= i %>" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-plus"> Producto <%= i + 1 %></i>
+              </button>
+     <% } %>
+    </div>
+
+     </ul>   
+     <% for(var m=0; m<des.length; m++) {%>
+        <div class="collapse" id="navbarToggleVer<%= m %>">
+            <div class="container-fluid" style="text-align: center;">
+                
+                 <h2><%= des[m] %></h2>
+                 <img src="<%= img[m] %>" class="img-fluid" alt="Responsive image">
+                 </div>
+           </div>
+ <% } %>
+    
+
+ 
+</body>
+</html>
