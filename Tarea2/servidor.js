@@ -7,14 +7,14 @@ let imagenes = ['https://www.alkosto.com/medias/7706112961071-001-750Wx750H?cont
 const express = require("express");
 const app = express();
 const app2 = express();
-const puerto = 5002;
+const puerto = 5000;
 const path = require("path");
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.set('view engine','ejs');
-app.set('views',__dirname+'/views');
-app.use(express.static(__dirname + "/public"));
+app.set('views', __dirname + '/views');
+app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', (req, res) => {
