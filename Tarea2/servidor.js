@@ -13,8 +13,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.set('view engine','ejs');
-app.set('views', __dirname + '/views');
-app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/Views');
+app.use(express.static(__dirname + '/Public'));
 
 
 app.get('/', (req, res) => {
